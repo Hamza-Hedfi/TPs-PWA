@@ -1,4 +1,3 @@
-
 <!--
 Exercie 1
 1- B C
@@ -33,13 +32,14 @@ Exercice 2
     <title>Exercice 3 DS 2019/2020</title>
 </head>
 <body>
+
 <form action="<?php $_SERVER["PHP_SELF"] ?>" method="get">
     <p>
         <label for="val1">Choisissez votre multiplicande (val1): </label>
         <select name="val1" id="val1">
             <?php
             for ($i = 0; $i <= 20; $i++) {
-                echo "<option value=\"$i\">$i</option>";
+                echo "<option value='$i'>$i</option>";
             }
             ?>
         </select>
@@ -49,21 +49,21 @@ Exercice 2
         <select name="val2" id="val2">
             <?php
             for ($i = 10; $i <= 20; $i++) {
-                echo "<option value=\"$i\">$i</option>";
+                echo "<option value='$i'>$i</option>";
             }
             ?>
         </select>
     </p>
     <button type="submit">Afficher la table choisie</button>
-
-    <?php
-    $val1 = isset($_REQUEST['val1']) ? $_REQUEST['val1'] : 0;
-    $val2 = isset($_REQUEST['val2']) ? $_REQUEST['val2'] : 0;
-    for ($i = 0; $i <= $val2; $i++) {
-        echo "<p> $val1 * $i = " . ($val1 * $i) . "</p>";
-    }
-    ?>
 </form>
+
+<?php
+$val1 = isset($_REQUEST['val1']) ? $_REQUEST['val1'] : 0;
+$val2 = isset($_REQUEST['val2']) ? $_REQUEST['val2'] : 0;
+for ($i = 0; $i <= $val2; $i++) {
+    echo "<p> $val1 * $i = " . ($val1 * $i) . "</p>";
+}
+?>
 
 </body>
 </html>
